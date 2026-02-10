@@ -12,7 +12,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lab1.ui.theme.Lab1Theme
@@ -36,28 +35,17 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
     var text by remember { mutableStateOf("Hello Android!") }
-    var textColor by remember { mutableStateOf(Color.Black) }
 
     Column(
         modifier = modifier.padding(16.dp)
     ) {
-        Text(
-            text = text,
-            color = textColor
-        )
+        Text(text = text)
 
         Button(
             onClick = { text = "Labas, FinTech2026" },
             modifier = Modifier.padding(top = 16.dp)
         ) {
             Text("Change Text")
-        }
-
-        Button(
-            onClick = { textColor = Color.Green },
-            modifier = Modifier.padding(top = 16.dp)
-        ) {
-            Text("Change Color")
         }
     }
 }
